@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmesa-ke <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 10:42:56 by vmesa-ke          #+#    #+#             */
-/*   Updated: 2024/10/23 09:58:53 by vmesa-ke         ###   ########.fr       */
+/*   Created: 2024/10/23 19:29:34 by vmesa-ke          #+#    #+#             */
+/*   Updated: 2024/10/23 19:29:36 by vmesa-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include "printf.h"
+#include <unistd.h>
+#include <stdarg.h>
 
-int	ft_printf(char const *str, ...)
-{
-	va_list	args;
-	int		bytes;
-
-	bytes = 0;
-	va_start(args, str);
-	while (*str)
-	{
-		if (*str == '%')
-		{
-			str++;
-			bytes = type(*str, args, bytes);
-		}
-		else
-			bytes = putchr(*str, bytes);
-		str++;
-	}
-	va_end(args);
-	return (bytes);
-}
+int	ptrcheck(unsigned long long ptr, int bytes);
+int	type(char c, va_list args, int bytes);
+int	putstr(char *str, int bytes);
+int	putchr(int c, int bytes);
+int	put_ptr_hex(unsigned long long ptr, int bytes);
+int	ft_putnbr(int n, int bytes);
+int	unsignedint(unsigned int n, int bytes);
+int	print_hex(unsigned int n, int bytes, char c);
