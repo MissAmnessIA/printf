@@ -17,7 +17,7 @@ O_FILES			=	$(patsubst %.c, %.o, ${C_FILES})
 CC				=	cc
 CFLAGS			=	-c -Wall -Werror -Wextra
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
 
 all : $(NAME)
 

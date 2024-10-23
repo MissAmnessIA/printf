@@ -9,7 +9,6 @@
 /*   Updated: 2024/10/23 09:58:53 by vmesa-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 #include "printf.h"
 
 int	ft_printf(char const *str, ...)
@@ -32,4 +31,11 @@ int	ft_printf(char const *str, ...)
 	}
 	va_end(args);
 	return (bytes);
+}
+
+int main()
+{
+char *c = NULL;
+ft_printf("%s",c );
+return 0;
 }

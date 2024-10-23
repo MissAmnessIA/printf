@@ -16,13 +16,11 @@ int	putstr(char *str, int bytes)
 	int	i;
 
 	i = 0;
+	if (!str)
+		bytes = putstr("(null)",bytes);
 	while (str[i])
-	{
-		write (1, &str[i], 1);
-		i++;
-	}
-	bytes += i;
-	return (bytes);
+		write (1, &str[i++], 1);
+	return (bytes + i);
 }
 
 int	ft_putnbr(int n, int bytes)

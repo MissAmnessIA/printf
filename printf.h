@@ -20,3 +20,4 @@ int	put_ptr_hex(unsigned long long ptr, int bytes);
 int	ft_putnbr(int n, int bytes);
 int	unsignedint(unsigned int n, int bytes);
 int	print_hex(unsigned int n, int bytes, char c);
+int	ft_printf(char const *str, ...);
