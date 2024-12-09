@@ -66,7 +66,10 @@ int	put_ptr_hex(unsigned long long ptr, int bytes)
 int	print_hex(unsigned int n, int bytes, char c)
 {
 	if (n == 0)
+	{
 		bytes = putchr ('0', bytes);
+		return (bytes);
+	}
 	if (n >= 16)
 		bytes = print_hex(n / 16, bytes, c);
 	if (n % 16 <= 9)
